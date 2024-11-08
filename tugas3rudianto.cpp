@@ -4,35 +4,31 @@ using namespace std;
 
 int main() {
     const int MaxBrg = 50;            
-    string NamaBrg[MaxBrg];             
-    int HargaUnit[MaxBrg];
-    int JumlahJual[MaxBrg];
-    float Total[MaxBrg];
+    string NamaBrg;             
+    int HargaUnit;
+    int JumlahJual;
+    float Total;
     int JumlahBrg = 0;              
     char Lagi;                      
 
     do {
         cout << setprecision(12);
         cout << "Nama Barang - " << JumlahBrg + 1 << ": ";
-        cin >> NamaBrg[JumlahBrg];
+        cin >> NamaBrg;
 
-        cout << "Harga Perbarang " << NamaBrg[JumlahBrg]<< ": ";
-        cin >> HargaUnit[JumlahBrg];
+        cout << "Harga Perbarang " << NamaBrg<< ": ";
+        cin >> HargaUnit;
 
-        cout << "Jumlah Barang Terjual " << NamaBrg[JumlahBrg]<< ": ";
-        cin >> JumlahJual[JumlahBrg];
+        cout << "Jumlah Barang Terjual " << NamaBrg<< ": ";
+        cin >> JumlahJual;
 
-        Total[JumlahBrg] = HargaUnit[JumlahBrg] * JumlahJual[JumlahBrg];
+        Total = HargaUnit * JumlahJual;
         JumlahBrg++;
 
         cout << "Apakah ingin memasukan data penjualan lagi? (y/n): ";
         cin >> Lagi;
         
     } while (Lagi == 'y' || Lagi == 'Y');
-
-    cout << endl << "------------------------------------------------------------------------------------------" << endl; 
-    cout << "  No   Nama Barang          Harga PerBarang     Jumlah Terjual       Total Pendapatan    " << endl;
-    cout << "------------------------------------------------------------------------------------------" << endl;
 
     for (int i = 0; i < JumlahBrg; i++) {
         cout << setw(4) << right << i + 1 << "   "
